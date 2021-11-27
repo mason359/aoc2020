@@ -3,7 +3,6 @@ from aocutils import get_raw
 def problem1():
     num_moves = 100
     cups = [int(cup) for cup in get_raw(23)]
-    print(cups)
     head, mapping = setup(cups)
     simulate(head, mapping, num_moves, len(cups))
     string = ''

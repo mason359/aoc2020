@@ -13,25 +13,5 @@ def run_problem(d, p):
     print(f'Finished in {end - start:0.6f}s\n')
     return end - start
 
-def run_all():
-    total_time = 0
-    errors = 0
-    for d in range(1, 26):
-        for p in range(1, 3):
-            try:
-                run_time = run_problem(d, p)
-                total_time += run_time
-            except Exception as e:
-                print(f'Day {d}, Problem {p} errored:')
-                print(f'{e}\n')
-                errors += 1
-    if errors:
-        print(f'\n {errors} errors occurred! Runtime not evaluated.')
-    else:
-        print(f'All days successful! Total runtime: {total_time}s')
-
 if __name__ == "__main__":
-    if sys.argv[1] == 'all':
-        run_all()
-    else:
-        run_problem(int(sys.argv[1]), int(sys.argv[2]))
+    run_problem(int(sys.argv[1]), int(sys.argv[2]))
